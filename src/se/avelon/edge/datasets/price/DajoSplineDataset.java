@@ -22,7 +22,6 @@ public class DajoSplineDataset extends MyXYSplineRenderer {
 		log.fine("Set " + data.size() + " items");
 	}
 
-	@Override
 	public int getItemCount(int serie) {
 		if(data == null) {
 			log.fine("getItemCount()" + 0);
@@ -34,14 +33,12 @@ public class DajoSplineDataset extends MyXYSplineRenderer {
 		}
 	}
 
-	@Override
 	public double getXValue(int serie, int item) {
 		log.fine("getXValue()");
 
 		return data.get(item).date.getTime();
 	}
 
-	@Override
 	public double getYValue(int serie, int item) {
 		log.fine("getYValue()");
 

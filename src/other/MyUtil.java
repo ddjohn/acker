@@ -11,7 +11,11 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import se.avelon.utilities.DajoLogger;
+import OmxDataFeed.OmxCandleFeedAdapter;
+
 public class MyUtil {
+	private static final DajoLogger log = DajoLogger.getLogger(MyUtil.class);
 	static SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	//static SimpleDateFormat dateFormat = new SimpleDateFormat(MyConfiguration.getInstance().getValue("format.date"));
 	static SimpleDateFormat dateAndTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -26,7 +30,10 @@ public class MyUtil {
 	
 	public static CharSequence getURLContent(URL url) throws IOException {
 		URLConnection conn = url.openConnection();
+		conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.4; en-US; rv:1.9.2.2) Gecko/20100316 Firefox/3.6.2");
+
 		String encoding = conn.getContentEncoding();
+		
 		if (encoding == null) {
 			encoding = "ISO-8859-1";
 		}

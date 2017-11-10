@@ -16,10 +16,15 @@ import datafeeders.CandleFeedData;
 import datafeeders.CandleFeedInterface;
 import datafeeders.StockData;
 
+/*
+ * Example:
+ * http://www.nasdaqomxnordic.com/webproxy/DataFeedProxy.aspx?SubSystem=Prices&Action=GetMarket&Exchange=NMF&Inst.an=fnm,id&Market=L:10208,L:10210,L:10212
+ * http://www.nasdaqomxnordic.com/webproxy/DataFeedProxy.aspx?SubSystem=Prices&Action=Winners&Max=5&Market=L:10214
+ * http://www.nasdaqomxnordic.com/webproxy/DataFeedProxy.aspx?SubSystem=Prices&Action=GetMarket&Exchange=NMF&Inst.an=fnm,id&Market=L:10208,L:10210,L:10212
+ */
 public class OmxCandleFeedAdapter implements CandleFeedInterface {
 	private static final DajoLogger log = DajoLogger.getLogger(OmxCandleFeedAdapter.class);
 
-	@Override
 	public Vector<CandleFeedData> getData(String instrument, int calendarType, int calendarValue) {
 		try {
 			Vector<CandleFeedData> v = new Vector<CandleFeedData>();

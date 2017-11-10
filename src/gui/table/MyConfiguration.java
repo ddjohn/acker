@@ -63,7 +63,6 @@ public class MyConfiguration extends JPanel implements ActionListener {
 		return properties.getProperty(name, "");
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("e=" + e);
 

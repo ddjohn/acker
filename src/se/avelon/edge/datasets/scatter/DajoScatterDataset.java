@@ -59,6 +59,7 @@ public class DajoScatterDataset extends  XYLineAndShapeRenderer implements XYDat
 
 	public void setGroup(DatasetGroup arg0) {}
 
+
 	public DomainOrder getDomainOrder() {
 		return DomainOrder.NONE;
 	}
