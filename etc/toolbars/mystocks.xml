@@ -1,0 +1,8 @@
+<toolbar name="main">
+
+	<border name="Index">
+		<button name="Add"    action="toolbar.mystocks.add"/>
+		<button name="Remove" action="toolbar.mystocks.remove"/>
+	</border>
+	
+</toolbar>

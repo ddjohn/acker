@@ -1,0 +1,35 @@
+<menubar>
+	<menu name="File">
+		<menuitem name="New" action="menu.file.new" icon="etc/menu/document-new-5.png"/>
+		<menuitem name="Open" action="menu.file.open" icon="icon/menu/document-open-5.png"/>
+		<menuitem name="Save" action="menu.file.save" icon="icon/menu/document-save-5.png"/>
+		<menuitem name="Save As" action="menu.file.saveas" icon="icon/menu/document-save-as-5.png"/>
+		<separator/>
+		<menuitem name="Import" action="aaa" icon=""/>
+		<menuitem name="Export" action="aaa" icon=""/>
+		<separator/>
+		<menuitem name="Preview" action="menu.file.preview" icon="etc/menu/document-preview.png"/>
+		<menuitem name="Print" action="menu.file.print" icon="etc/menu/document-print.png"/>
+		<separator/>
+		<menuitem name="Quit" action="menu.file.quit" icon="icon/menu/system-exit.png"/>	
+	</menu>
+	
+	<menu name="Tools">
+			<menuitem name="Preferences" action="bbb" icon=""/>	
+			<separator/>
+			<menuitem name="Bevakning" action="bbb" icon=""/>	
+			<menuitem name="Kurslista" action="bbb" icon=""/>	
+			<menuitem name="Index" action="bbb" icon=""/>	
+			<menuitem name="Signaler" action="bbb" icon=""/>	
+	</menu>
+	
+	<menu name="Technical Analysis" icon=""/>
+	<menu name="Windows" icon=""/>
+	
+	<menu name="Help">
+		<menuitem name="About" action="menu.help.about" icon="icon/menu/help-about-3.png"/>
+		<menuitem name="Help" action="menu.help.help" icon="icon/menu/help.png"/>
+		<menuitem name="Debug" action="menu.help.debug" icon=""/>
+	</menu>
+	
+</menubar>

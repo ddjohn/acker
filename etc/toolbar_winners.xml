@@ -1,0 +1,4 @@
+<toolbar name="winners">
+	<label name="Number of rows:"/>
+	<maxnumberofrows action="toolbar.winners.max"/>
+</toolbar>
