@@ -22,7 +22,6 @@ public class DajoOHLCDataset extends MyOHLCDataset {
 		log.fine("Set " + data.size() + " items");		
 	}
 
-	@Override
 	public int getItemCount(int serie) {
 		if(data == null) {
 			log.fine("getItemCount()" + 0);
@@ -34,49 +33,42 @@ public class DajoOHLCDataset extends MyOHLCDataset {
 		}
 	}
 
-	@Override
 	public double getXValue(int serie, int item) {
 		log.fine("getXValue()");
 
 		return data.get(item).date.getTime();
 	}
 
-	@Override
 	public double getYValue(int serie, int item) {
 		log.fine("getYValue()");
 
 		return data.get(item).closingPrice;
 	}
 
-	@Override
 	public double getCloseValue(int serie, int item) {
 		log.fine("getCloseValue()");
 
 		return data.get(item).closingPrice;
 	}
 
-	@Override
 	public double getHighValue(int serie, int item) {
 		log.fine("getHighValue()");
 
 		return data.get(item).highestPrice;
 	}
 
-	@Override
 	public double getLowValue(int serie, int item) {
 		log.fine("getLowValue()");
 
 		return data.get(item).lowestPrice;
 	}
 
-	@Override
 	public double getOpenValue(int serie, int item) {
 		log.fine("getOpenValue()");
 
 		return data.get(item).openingPrice;
 	}
 
-	@Override
 	public double getVolumeValue(int serie, int item) {
 		log.fine("getVolumeValue()");
 

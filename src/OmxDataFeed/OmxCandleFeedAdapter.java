@@ -19,7 +19,6 @@ import datafeeders.StockData;
 public class OmxCandleFeedAdapter implements CandleFeedInterface {
 	private static final DajoLogger log = DajoLogger.getLogger(OmxCandleFeedAdapter.class);
 
-	@Override
 	public Vector<CandleFeedData> getData(String instrument, int calendarType, int calendarValue) {
 		try {
 			Vector<CandleFeedData> v = new Vector<CandleFeedData>();
