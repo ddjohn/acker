@@ -1,0 +1,38 @@
+#!/bin/bash
+
+WORKSPACE=/home/${USER}/tmp/workspace
+CONFIGDIR=/home/${USER}/tmp/eclipse
+REPOSITORIES=http://download.eclipse.org/releases/indigo/,http://dist.sonar-ide.codehaus.org/eclipse/,http://www.nodeclipse.org/updates/
+REPOSITORIES=http://download.eclipse.org/releases/indigo/,http://dist.sonar-ide.codehaus.org/eclipse/
+
+echo ""
+echo "Starting eclipse..."
+
+echo ""
+echo "Installing softwares (~120 sec)..."
+#eclipse -repository ${REPOSITORIES} -configuration file:${CONFIGDIR} -data file:${WORKSPACE} \
+#	-nosplash \
+#	-application org.eclipse.equinox.p2.director \
+#	-installIU org.eclipse.m2e.feature.feature.group \
+#	-installIU org.eclipse.egit.feature.group \
+#	-installIU org.eclipse.jgit.feature.group \
+#	-installIU org.eclipse.cdt.feature.group \
+#	-installIU org.eclipse.cdt.sdk.feature.group \
+#	-installIU org.eclipse.cdt.platform.feature.group \
+#	-installIU org.eclipse.cdt.debug.ui.memory.feature.group \
+#	-installIU org.sonar.ide.eclipse.jdt.feature.feature.group \
+
+#	-installIU org.nodeclipse.enide.nodejs.feature.feature.group
+
+if [ $? -ne 0 ]
+then
+	echo "Installation failed! Aborting..."
+	exit 1
+fi
+
+echo ""
+echo "Starting eclipse..."
+eclipse -configuration file:${CONFIGDIR} -data file:${WORKSPACE} \
+	-application org.eclipse.ui.ide.workbench \
+	-perspective org.eclipse.ui.resourcePerspective \
+	"$@" 

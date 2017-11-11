@@ -1,0 +1,12 @@
+SHORT
+Köp 	2012-07-25	Fabege		Trend, Oscillator, Double Richochette
+Sälj	2012-07-26	Fabege		58,60 - 57,30 = 1,30 x 600 = + 780 kr
+Richochette: +780
+
+MEDIUM
+Köp		2012-07-26	Investor	Trend, -Oscillator, Donchian high
+K�p			2012-07-20 	Assa		Trend, Donchian high 
+
+LONG
+
+
