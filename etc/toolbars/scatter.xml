@@ -1,0 +1,6 @@
+<toolbar name="main">
+
+	<border name="Index">
+		<button name="Refresh" action="toolbar.scatter.refresh"/>
+	</border>
+</toolbar>

@@ -1,0 +1,24 @@
+<stocks>
+	<stock id="SSE14336" nm="Addtech" buy="117,70" redefined="170,00" lsp=""/>
+	<stock id="SSE14922" nm="Billerud" buy="63,60" redefined="65,00" lsp=""/>
+	<stock id="SSE81878" nm="Dedicare" buy="31,03" redefined="31,03" lsp=""/>
+	<stock id="SSE66174" nm="Eoulus Wind" buy="54,08" redefined="54,08" lsp=""/>
+	<stock id="SSE82239" nm="Finnveden Bulten" buy="49,04" redefined="49,04" lsp=""/>
+	<stock id="SSE55907" nm="Hexpol" buy="156,20" redefined="237,00" lsp=""/>
+	<stock id="SSE817" nm="Haldex" buy="38,26" redefined="38,26" lsp=""/>
+	<stock id="" nm="Hedson" buy="13,76" redefined="13,76" lsp=""/>
+	<stock id="SSE819" nm="Hexagon" buy="140,57" redefined="140,57" lsp=""/>
+	<stock id="SSE912" nm="Kabe" buy="93,83" redefined="95,00" lsp=""/>
+	<stock id="SSE33359" nm="Kappahl" buy="30,52" redefined="30,52" lsp=""/>
+	<stock id="SSE1020" nm="Medivir" buy="88,30" redefined="88,30" lsp=""/>
+	<stock id="SSE920" nm="New Wave" buy="45,66" redefined="45,66" lsp=""/>
+	<stock id="SSE19095" nm="Nobia" buy="41,97" redefined="41,97" lsp=""/>
+	<stock id="SSE31885" nm="Orexo" buy="22,84" redefined="33,60" lsp=""/>
+	<stock id="SSE24227" nm="Oriflame" buy="227,19" redefined="227,19" lsp=""/>
+	<stock id="SSE1040" nm="Pricer" buy="13,42" redefined="13,42" lsp=""/>
+	<stock id="SSE261" nm="Scania" buy="121,50" redefined="121,50" lsp=""/>
+	<stock id="SSE3083" nm="Sectra" buy="39,07" redefined="45,00" lsp=""/>
+	<stock id="SSE55913" nm="Swedol" buy="33,16" redefined="33,16" lsp=""/>
+	<stock id="SSE82457" nm="Transmode" buy="50,04" redefined="77,25" lsp=""/>
+	<stock id="SSE72798" nm="eWork" buy="40,04" redefined="40,04" lsp=""/>
+</stocks>

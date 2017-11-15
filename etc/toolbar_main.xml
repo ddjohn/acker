@@ -1,0 +1,23 @@
+<toolbar name="main">
+	<button name="Info" action="toolbar.button.info"/>
+	<label name="Time:"/>
+	<mytimebox action="toolbar.main.time"/>
+	<border name="Index">
+		<checkbox name="Enable" action="toolbar.index.enable"/>
+		<checkbox name="Mean200" action="toolbar.index.mean200"/>
+		<checkbox name="Mean50" action="toolbar.index.mean50"/>
+		<checkbox name="Mean20" action="toolbar.index.mean20"/>
+		<checkbox name="Donchian20" action="toolbar.index.donchian20"/>
+		<checkbox name="Index" action="toolbar.index.index"/>
+		<checkbox name="Candle" action="toolbar.index.candle"/>
+	</border>
+	<border name="Volume">
+		<checkbox name="Enable" action="toolbar.volume.enable"/>
+		<checkbox name="Volume" action="toolbar.volume.volume"/>
+	</border>
+	<border name="Percent">
+		<checkbox name="Enable" action="toolbar.percent.enable"/>
+		<checkbox name="Stochastic3" action="toolbar.percent.stochastic3"/>
+		<checkbox name="Stochastic1" action="toolbar.percent.stochastic1"/>
+	</border>
+</toolbar>

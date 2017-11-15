@@ -1,0 +1,97 @@
+package data;
+
+import info.MyInformationTable;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+import javax.xml.transform.TransformerException;
+import javax.xml.xpath.XPathExpressionException;
+import net.OmxData;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import util.MyUtil;
+
+public class MyStockList extends JScrollPane implements ActionListener {
+	private static final long serialVersionUID = 1L;
+
+	private OmxData data = new OmxData();
+	private boolean visible = true;
+	static JList list = new JList();
+	
+	public MyStockList() {
+		super(list);
+		
+		this.setPreferredSize(new Dimension(256,256));
+
+		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		this.collectStocks();		
+	}
+
+	private void collectStocks() {
+		try {			
+			Document doc = data.getStock("L:10208,L:10210,L:10212,27,30");
+			MyInformationTable.getInstance().debug("resp=" + MyUtil.documentToString(doc)); 
+			NodeList nodes = MyUtil.xpathSearch(doc, "//market/instruments/inst");
+
+			Vector<MyStock> v = new Vector<MyStock>();
+			v.add(new MyStock("OMX30", "Stockholm", "SE0000337842"));
+
+			for(int i = 0; i < nodes.getLength(); i++) {
+				Node node = nodes.item(i);
+				
+				v.add(new MyStock(
+						node.getAttributes().getNamedItem("fnm").getNodeValue(),
+						node.getParentNode().getParentNode().getAttributes().getNamedItem("nm").getNodeValue(), 
+						node.getAttributes().getNamedItem("id").getNodeValue()));
+			}
+			list.setListData(v);
+		} 
+		catch (XPathExpressionException e) {
+			MyInformationTable.getInstance().error("No connection for " + e);
+
+			JOptionPane.showMessageDialog(this, "No connection!!" + e);
+			e.printStackTrace();
+			this.collectStocks();
+		} 
+		catch (TransformerException e) {
+			JOptionPane.showConfirmDialog(this, "e=" + e);
+			e.printStackTrace();
+		}		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		visible = visible == false;
+		System.out.println("visible=" + visible);
+
+		if(visible) {
+			this.setPreferredSize(new Dimension(256,256));
+
+		}
+		else {
+			this.setPreferredSize(new Dimension(0,0));
+
+		}
+		this.invalidate();
+		this.repaint();
+		this.getParent().invalidate();
+		this.getParent().repaint();
+/*		Component[] com = this.getComponents();  
+		for (int a = 0; a < com.length; a++) {  
+			com[a].setVisible(visible);  
+		}  
+		this.setVisible(visible);
+		this.getParent().setVisible(visible);
+	*/
+	}
+
+	public JList getList() {
+		return list;
+	}
+}
