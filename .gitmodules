@@ -1,0 +1,3 @@
+[submodule "meteor/minidash"]
+	path = meteor/minidash
+	url = https://github.com/ddjohn/minidash.git
