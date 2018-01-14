@@ -6,10 +6,10 @@ gpio.mode(led2, gpio.OUTPUT)
 
 print('Starting webserver...');
 srv=net.createServer(net.TCP)
+
 print('Listen webserver...');
 srv:listen(80,function(conn)
-
-    conn:on("receive", function(client,request)
+  conn:on("receive", function(client,request)
 	print('Receive message...');
         local buf = "";
         local _, _, method, path, vars = string.find(request, "([A-Z]+) (.+)?(.+) HTTP");
@@ -29,10 +29,13 @@ srv:listen(80,function(conn)
               gpio.write(led2, gpio.LOW);
         elseif(_GET.pin == "OFF")then
               gpio.write(led2, gpio.HIGH);
-      elseif(_GET.pin == "on")then
+        elseif(_GET.pin == "on")then
               gpio.write(led2, gpio.LOW);
         elseif(_GET.pin == "off")then
               gpio.write(led2, gpio.HIGH);
+        elseif(_GET.pin == "text")then
+	      dofile("lcd.lua").cls();
+	      dofile("lcd.lua").lcdprint(_GET.text, 1, 0)
         end
         client:send(buf);
         client:close();

@@ -1,17 +1,12 @@
-function wait()
-  if wifi.sta.getip() == nil then
-    print('IP unavailable, Waiting...')
-  else
-    tmr.stop(1)
-    print('ESP8266 mode is: ' .. wifi.getmode())
-    print('MAC address is: ' .. wifi.ap.getmac())
-    print('IP is '..wifi.sta.getip())
-    dofile('iot.lua')
-  end
+function startup()
+  print('Starting...')
+  dofile('iot.lua')
 end
 
-print('Set up wifi...')
-wifi.setmode(wifi.STATION)
-wifi.sta.config {ssid='Felicia', pwd='21E3B46A72'}
-wifi.sta.connect()
-tmr.alarm(1, 2500, 1, wait)
+print('Wait for 30 sec')
+dofile("lcd.lua").cls();
+-- dofile("lcd.lua").lcdprint("Init()", 1, 0)
+dofile("lcd.lua").lcdprint("2018-01-18", 2, 0)
+--dofile("lcd.lua").home();
+--dofile("lcd.lua").cursor(1);
+tmr.alarm(0, 30000, 0, startup)
