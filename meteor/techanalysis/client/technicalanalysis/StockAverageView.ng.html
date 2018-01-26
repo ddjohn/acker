@@ -1,0 +1,19 @@
+<stock-menu></stock-menu>
+
+<div class="alert alert-danger" role="alert" ng-repeat="alert in alerts">{{alert}}</div>
+
+<div google-chart chart="chart" style="height:600px; width:100%;">Loading....</div>
+
+<hr/>
+
+<p>mvav1 - </p>
+<p>mvav2 - </p>
+<p>mvav3 - </p>
+
+<p>MovingAverageDays1=10 MovingAverageDays2=0 MovingAverageDays3=0 Function=MovingAverage</p>
+
+<hr/>
+
+<pre>
+{{chart | json}}
+</pre>

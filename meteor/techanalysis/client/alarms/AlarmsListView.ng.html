@@ -1,0 +1,38 @@
+<form class="jumbotron" ng-show="$root.currentUser">
+ <div class="form-group">
+	<label class="col-sm-2">Name</label>
+	<input class="col-sm-10" ng-model="alarm.date"/>
+</div>
+ <div class="form-group">
+	<label class="col-sm-2">Title</label>
+	<input class="col-sm-10" ng-model="alarm.title"/>
+</div>
+ <div class="form-group">
+	<label class="col-sm-2">Status</label>
+	<input class="col-sm-10" ng-model="alarm.status"/>
+</div>
+ <div class="form-group">
+	<button class="btn btn-default" ng-click="alarms.save(alarm)">Add</button>
+	<button class="btn btn-default" ng-click="removeAll()">Remove All</button>
+</div>
+</form>
+
+<p></p>
+
+<button class="btn btn-primary btn-lg btn-block alert alert-dismissible alert-{{alarm.status}}" type="button" ng-repeat="alarm in alarms">
+	<span class="badge"><b>{{alarm.date}}</b></span>
+	<span>{{alarm.title}}</span>
+	<span ng-show="$root.currentUser" ng-click="remove(alarm)">X</span>
+</button>
+<hr/>
+<small>
+	<center>
+		<b>Legend:</b> 
+		<button class="label label-success">&nbsp;</button> Success 
+		<button class="label label-warning">&nbsp;</button> Warning 
+		<button class="label label-danger">&nbsp;</button> Error 
+		<button class="label label-primary">&nbsp;</button> Information
+	</center>
+</small>
+
+

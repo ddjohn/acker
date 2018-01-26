@@ -1,0 +1,40 @@
+<div ng-show='test["@status"] == 0' class="alert alert-danger" role="alert">{{instrument.exception["@msg"]}}</div>
+<div ng-show='issuer["@status"] == 0' class="alert alert-danger" role="alert">{{issuer.exception["@msg"]}}</div>
+<div ng-show='data["@status"]  == 0' class="alert alert-danger" role="alert">{{data.exception["@msg"]}}</div>
+<div ng-show='serie["@status"] == 0' class="alert alert-danger" role="alert">{{serie.exception["@msg"]}}</div>
+
+<stock-menu></stock-menu>
+
+<div class="alert alert-danger" role="alert" ng-repeat="alert in alerts">{{alert}}</div>
+
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<p>Name: {{instrument.inst["@nm"]}}</p>
+		<p>Fullname: {{instrument.inst["@fnm"]}}</p>
+		<p>ISIN: {{instrument.inst["@isin"]}}</p>
+	</div>
+	<div class="panel-body">
+		<p>Chairman: {{issuer.issuer["@cm"]}}</p>
+		<p>Web: <a href='http://{{issuer.issuer["@www"]}}'>{{issuer.issuer["@www"]}}</a></p>
+		<p>Origin: {{issuer.issuer["@co"]}}</p>
+		<p>Business: {{issuer.issuer["business"]}}</p>
+		<p>Instrument: {{instrument.inst["@id"]}}</p>
+		<p>Currency: {{instrument.inst["@cr"]}}</p>
+	</div>
+	<div class="panel-footer">
+		<p>Total Volume: {{instrument.inst["@tv"] | number}}</p>
+		<p>Last price: {{instrument.inst["@lsp"] | number}}</p>
+		<p>Lowest / Highest Price: {{instrument.inst["@lp"] | number}} - {{instrument.inst["@hp"] | number}}</p>
+		<p>Opening / Closing Prices: {{instrument.inst["@op"] | number}} - {{instrument.inst["@cp"] | number}}</p>
+		<p>Year Lowest / Highest Price: {{data.hi["@ylp"]}} - {{data.hi["@yhp"]}}</p>
+		<p>Week: {{data.hi["@wc"]}}, Month: {{data.hi["@mc"]}}, Quarter: {{data.hi["@tmc"]}}, Halfyear: {{data.hi["@smc"]}},Year: {{data.hi["@yc"]}} (Year start: {{data.hi["@ysc"]}})</p>
+	</div>
+</div>
+
+<hr/>
+<pre>
+{{instrument | json}}
+{{data | json}}
+{{issuer | json}}
+</pre>

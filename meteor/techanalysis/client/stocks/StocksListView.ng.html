@@ -1,0 +1,28 @@
+<form class="jumbotron" ng-show2="$root.currentUser">
+ <div class="form-group">
+	<label class="col-sm-2">Code</label>
+	<input class="col-sm-10" ng-model="stock.code"/>
+	<label class="col-sm-2">Name</label>
+	<input class="col-sm-10" ng-model="stock.name"/>
+	<label class="col-sm-2">Amount</label>
+	<input class="col-sm-10" ng-model="stock.value"/>
+</div>
+<hr/>
+ <div class="form-group">
+	<label class="col-sm-2"></label>
+	<button class="btn btn-default" ng-click="add(stock)">Add</button>
+	<button class="btn btn-default" ng-click="removeAll()">Remove All</button>
+</div>
+</form>
+
+<p></p>
+
+<button class="btn btn-warning" type="button" ng-repeat="stock in stocks">
+	<span class="glyphicon glyphicon-clock" aria-hidden="true"></span>
+	<span class="badge">{{stock.code}}</span>
+	<a href="/stocks/{{stock._id}}">{{stock.name}}</a>
+	({{stock.value}})
+	<span ng-show2="$root.currentUser" ng-click="remove(stock)">X</span>
+</button>
+
+

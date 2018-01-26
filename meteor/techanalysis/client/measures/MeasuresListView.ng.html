@@ -1,0 +1,43 @@
+<form class="jumbotron" ng-show="$root.currentUser">
+ <div class="form-group">
+	<label class="col-sm-2">Name</label>
+	<input class="col-sm-10" ng-model="measure.name"/>
+</div>
+ <div class="form-group">
+	<label class="col-sm-2">Value</label>
+	<input class="col-sm-10" ng-model="measure.value"/>
+</div>
+ <div class="form-group">
+	<label class="col-sm-2">Icon</label>
+	<input class="col-sm-10" ng-model="measure.icon"/>
+</div>
+ <div class="form-group">
+	<label class="col-sm-2">Status</label>
+	<input class="col-sm-10" ng-model="measure.status"/>
+</div>
+ <div class="form-group">
+	<button class="btn btn-default" ng-click="measures.save(measure)">Add</button>
+	<button class="btn btn-default" ng-click="removeAll()">Remove All</button>
+</div>
+</form>
+
+<p></p>
+
+<button class="btn btn-{{measure.status}}" type="button" ng-repeat="measure in measures">
+	<span class="glyphicon glyphicon-{{measure.icon}}" aria-hidden="true"></span>
+	<a href="/measures/{{measure._id}}">{{measure.name}}</a>
+	<span class="badge">{{measure.value}}</span>
+	<span ng-show="$root.currentUser" ng-click="remove(measure)">X</span>
+</button>
+<hr/>
+<small>
+	<center>
+		<b>Legend:</b> 
+		<button class="label label-success">&nbsp;</button> Success 
+		<button class="label label-warning">&nbsp;</button> Warning 
+		<button class="label label-danger">&nbsp;</button> Error 
+		<button class="label label-primary">&nbsp;</button> Information
+	</center>
+</small>
+
+

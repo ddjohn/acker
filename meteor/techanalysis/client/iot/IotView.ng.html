@@ -1,0 +1,18 @@
+
+<select ng-options="item as item.label for item in items track by item.id" ng-model="selected" ng-change="update()">
+	<option value="">- choose iot -</option>
+</select>
+
+<select ng-options="day as day.label for day in days track by day.id" ng-model="selected2" ng-change="update()">
+	<option value="">- choose days -</option>
+</select>
+
+<select ng-options="dot as dot.label for dot in dots track by dot.id" ng-model="selected3" ng-change="update()">
+	<option value="">- choose days -</option>
+</select>
+
+<canvas id="line" class="chart chart-line" chart-data="data"
+        chart-labels="labels" chart-legend="true" chart-series="series" chart-options="options" chart-colours="colours"
+        chart-click="onClick">
+</canvas>
+

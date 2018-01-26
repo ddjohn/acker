@@ -1,0 +1,27 @@
+<h1>Gridster</h1>
+<div gridster>
+    <ul>
+        <li gridster-item="item" ng-repeat="item in kpi">
+        	<div class="dajo-gridster dajo-gridster-{{item.status}}">
+			<div class="fa fa-{{item.icon}} dajo-gridster-icon"></div>
+			<div class="dajo-gridster-title">{{item.name}}</div>
+			<div class="dajo-gridster-value">{{item.value}}</div>
+			<div class="dajo-gridster-timestamp" data-livestamp="{{item.epoch}}"></div>
+		</div>
+	</li>
+    </ul>
+</div>
+
+<!--
+<div gridster>
+    <ul>
+        <li style="background: lightgreen" gridster-item row="item.position[0]" col="item.position[1]" size-x="item.size.x" size-y="item.size.y" ng-repeat="item in customItems">Hej</li>
+    </ul>
+</div>
+
+<div data-gridster>
+    <ul>
+        <li data-gridster-item data-row="item.position[0]" data-col="item.position[1]" data-sizex="item.size.x" data-sizey="item.size.y" ng-repeat="item in customItems">Hej</li>
+    </ul>
+</div>
+-->

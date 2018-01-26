@@ -1,0 +1,43 @@
+<input type="text" ng-model="search" placeholder="Search...">
+
+<h1>Markets</h1>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0001809476/90'>OMX Nordic 40</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/DK0060368991/90'>OMX Copenhagen 20</a>
+<a class="btn btn-default" role="button" href='/stock-candlestick/SE0000337842/90'>OMX Stockholm 30</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/FI0008900212/90'>OMX Helsinki 25</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/IS0000018885/90'>OMX Iceland 8</a>
+<a class="btn btn-warning" role="button" href='/bubble-markets'>Bubble Chart</a>
+
+<h1>Sectors</h1>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384519/90'>Oil & Gas</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384535/90'>Materials</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384543/90'>Chemicals</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384550/90'>Basic Resources</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384568/90'>Industrials</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384576/90'>Construction & Materials</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384584/90'>Indistrial Goods & Services</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384592/90'>Consumer Goods</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384600/90'>Automobiles & Parts</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384618/90'>Food & Bevarges</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384626/90'>Personal & Household Goods</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384634/90'>Health Care</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384659/90'>Consumer Services</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384667/90'>Retail</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384683/90'>Travel & Leisure</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384691/90'>Telecommunications</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384717/90'>Utilities</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384733/90'>Financial</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384741/90'>Banks</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384758/90'>Insurance</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384766/90'>Real Estate</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384774/90'>Financial Services</a>
+<a class="btn btn-info" role="button" href='/stock-candlestick/SE0004384782/90'>Technology</a>
+<a class="btn btn-warning" role="button" href='/bubble-sectors'>Bubble Chart</a>
+
+<div ng-repeat="market in test.market">
+	<h1>{{market["@fnm"]}}</h1>
+	<a ng-repeat="instrument in market.instruments  | filter:search" class="btn btn-info" role="button" href='/stock-candlestick/{{instrument["@id"]}}/90'>{{instrument["@fnm"]}}</a>
+	<a class="btn btn-warning" role="button" href='/bubble-stocks'>Bubble Chart</a>
+</div>
+<hr>
+{{test}}

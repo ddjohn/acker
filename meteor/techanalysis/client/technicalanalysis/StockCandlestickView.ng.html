@@ -1,0 +1,18 @@
+<stock-menu></stock-menu>
+
+<div class="alert alert-danger" role="alert" ng-repeat="alert in alerts">{{alert}}</div>
+
+<div google-chart chart="chart" style="height:600px; width:100%;">Loading....</div>
+
+<hr/>
+
+<p> op - Opening Price</p>
+<p> cp - Closing Price</p>
+<p> hp - Highest Price</p>
+<p> lp - Lowest Price</p>
+
+<hr/>
+<pre>
+{{chart | json}}
+</pre>
+

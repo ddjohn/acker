@@ -1,0 +1,53 @@
+<head>
+  <title>Avelon's Place</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Some description"/>
+  <meta name="viewport"    content="user-scalable=no, initial-scale=1, minimal-ui, maximum-scale=1, minimum-scale=1" />
+  <link rel="shortcut icon" href="/favicon.ico">
+  <base href="/">
+</head>
+
+<body ng-app="avelon">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Avelon's Place</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/about">About</a></li>
+          <li><a href="/gridster">Gridster</a></li>
+          <li><a href="/iot">IOT</a></li>
+          <li><a href="/stock-markets">Tech Analysis</a></li>
+          <li><a href="/chats">Chat</a></li>
+          <li><a href="/birthdays">Birthdays</a></li>
+          <li><a href="/kpis">KPIs</a></li>
+          <li><a href="/measures">Measurements</a></li>
+          <li>&nbsp;<login-buttons></login-buttons>&nbsp;</li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <h1>&nbsp;</h1>
+
+<i class="fa fa-home"></i>Home
+  <div class="container" ui-view></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+	<div class="col-md-4 text-muted text-center">Avelon's Place</div>
+	<div class="col-md-4 text-muted text-center">ddjohn@gmail.com</div>
+	<div class="col-md-4 text-muted text-center">aaa</div>
+      </div>
+    </div>
+  </footer>
+</body>

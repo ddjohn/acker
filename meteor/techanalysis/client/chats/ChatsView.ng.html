@@ -1,0 +1,10 @@
+user: {{$root.currentUser}}
+<div>
+	<div ng-repeat="chat in chats | orderBy:'epoch' | limitTo:-8">
+		<span><small>{{chat.time}}</small><br/><b>{{chat.from}}</b> --> {{chat.body}}</span>
+	</div>
+</div>
+<div>
+	<textarea class="form-control" rows="3" placeholder="Chat..." ng-model="newChat" ng-keydown="add($event, $root.currentUser._id)"></textarea>
+	<p>&nbsp;</p>
+</div>

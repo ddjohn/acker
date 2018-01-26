@@ -1,0 +1,98 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-2">
+			<form>
+				<div class="form-group">
+					<label>Story: </label>
+					<input type="text" class="form-control" ng-model="task.story" placeholder="story..."/>
+				</div>
+					<div class="form-group">
+					<label>Task: </label>
+					<input type="text" class="form-control" ng-model="task.task" placeholder="task..."/>
+				</div>
+
+				<button type="submit" ng-click="task.status='todo'; kanban.save(task); task = {};">Add task!</button>
+			</form>
+		</div>
+		<div class="col-sm-2">
+			<p>Preview:&nbsp;</p>
+			<div class="panel panel-default">
+				<div class="panel-heading btn-warning">
+					{{task.story}}
+					<a ng-click="kanban.remove(task);"><span aria-hidden="true">&times;</span></a>
+				</div>
+				<div class="panel-body bg-warning">
+					<p>{{task.task}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4">
+			<form class="form-inline">
+				<div class="form-group">
+					<label>Create team:</label>
+					<input type="text" class="form-control" ng-model="team.name" placeholder="team..."/>
+					<button type="submit" ng-click="teams.save(team); team={};">Add!</button>
+				</div>
+			</form>
+			<form class="form-inline">
+				<div class="form-group">
+					<label>Create story:</label>
+					<input type="text" class="form-control" ng-model="story.name" placeholder="story..."/>
+					<button type="submit" ng-click="stories.save(story); story={};">Add!</button>
+				</div>
+			</form>
+			<select class="form-control">
+				<option ng-repeat="team in teams">Team: {{team.name}}</option>
+			</select>
+		</div>
+	</div>
+
+	<hr/>
+
+	<div class="row">
+		<div class="alert alert-success" role="alert">Created a task!!</div>
+	</div>
+
+	<hr/>
+
+	<div class="row bg-success">
+		<div class="col-sm-2">TO DO</div>
+		<div class="col-sm-1"> <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span></div>
+		<div class="col-sm-6">IN PROGRESS</div>
+		<div class="col-sm-1"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span></div>
+		<div class="col-sm-2">DONE</div>
+	</div>
+	<div class="row bg-success">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-2">Plan <span class="badge">4</span></div>
+		<div class="col-sm-2">Develope <span class="badge">4</span></div>
+		<div class="col-sm-2">Test <span class="badge">4</span></div>
+		<div class="col-sm-2">Deliver <span class="badge">4</span></div>
+		<div class="col-sm-2"></div>
+	</div>
+	<div class="row" ng-repeat="task in kanban">
+		<div class="col-sm-2">
+			<div class="panel panel-default">
+				<div class="panel-heading btn-warning">
+					{{task.story}}
+					<a ng-click="kanban.remove(task);"><span aria-hidden="true">&times;</span></a>
+				</div>
+				<div class="panel-body bg-warning">
+					<p>{{task.task}}</p>
+					<p class="text-right"><span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true">&nbsp;</span></p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-2"></div>
+	</div>
+</div>
+
+<hr/>
+
+{{ kanban }}
+{{teams}}
