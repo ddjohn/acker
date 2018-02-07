@@ -1,0 +1,46 @@
+<template name="App_body">
+  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+  <a class="navbar-brand" href="#"><i class="fa fa-home"></i> MyHome</a>
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#"><i class="fa fa-bolt"></i> PhilipsHue</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+    <li>
+      <a class="nav-link disabled" href="#">{{> loginButtons}}</a>
+    </li>
+  </ul>
+</nav>
+
+  {{#if currentUser}}
+     <form class="new-task">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+     </form>
+  {{/if}}
+
+  {{> Template.dynamic template=main}}
+
+  <hr/>
+  
+  <footer class="footer">
+      <div class="container">
+        <div class="row">
+    <div class="col-md-4 text-muted text-center">Avelon's Place</div>
+    <div class="col-md-4 text-muted text-center">ddjohn@gmail.com</div>
+    <div class="col-md-4 text-muted text-center">aaa</div>
+        </div>
+      </div>
+    </footer>
+  
+</template>

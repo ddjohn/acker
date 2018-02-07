@@ -1,0 +1,56 @@
+<template name="hue">
+<span class="border border-primary">
+
+	<h2>Philips Hue</h2>
+  <p><b>User:</b> D8ZXTiVIT5Jxu7sW5WI7Mnj9C60l0i94wZF3nVzh</p>
+
+  <table class="table">
+  <thead>
+    <tr><th>Light</th><th>Deails</th><th>State</th><th>Control</th></tr>
+  </thead>
+  <tbody>
+    {{#each light in lights}}
+    <tr>
+      <th>{{light.id}}</th>
+      <td>
+          <b>Name:</b> {{light.name}} ({{light.uniqueid}})<br/>
+          <b>Type:</b> {{light.type}}<br/>
+          <b>Model:</b> {{light.manufacturername}} {{light.productid}}<br/>
+          <b>Software:</b> {{light.swconfigid}} {{light.swversion}}    
+      </td>
+      <td>
+        <b>On:</b> {{light.state.on}}<br/>
+        <b>Reachable:</b> {{light.state.reachable}}<br/>
+        <b>Dim:</b> {{light.state.bri}}
+      </td>
+      <td>
+          <div class="btn-group" role="group" aria-label="Light Control">
+            {{#if light.state.on}}
+            <button type="button" light="{{light.id}}" id="onButton" class="btn btn-success" disabled>On</button>
+            {{else}}
+            <button type="button" light="{{light.id}}" id="onButton" class="btn btn-success">On</button>
+            {{/if}}
+            {{#if light.state.on}}
+            <button type="button" light="{{light.id}}" id="offButton" class="btn btn-danger">Off</button><br/>
+            {{else}}
+            <button type="button" light="{{light.id}}" id="offButton" class="btn btn-danger" disabled>Off</button><br/>
+            {{/if}}
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="256"></div>
+            </div>
+
+              <div class="progress">
+                  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>        
+      </td>
+    </tr>
+
+  {{/each}}
+  </tbody>
+  </table>  
+
+  <button type="button" id="testButton" class="btn btn-primary">Refresh...</button>
+
+</span>
+</template>
