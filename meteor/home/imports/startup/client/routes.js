@@ -12,7 +12,28 @@ import '../../ui/pages/not-found/not-found.js';
 FlowRouter.route('/', {
   name: 'App.home',
   action() {
-    BlazeLayout.render('App_body', { main: 'App_home' });
+    BlazeLayout.render('App_body', { main: 'About_home' });
+  },
+});
+
+FlowRouter.route('/about', {
+  name: 'About.home',
+  action() {
+    BlazeLayout.render('App_body', { main: 'About_home' });
+  },
+});
+
+FlowRouter.route('/hue', {
+  name: 'Hue.home',
+  action() {
+    BlazeLayout.render('App_body', { main: 'Hue_home' });
+  },
+});
+
+FlowRouter.route('/kodi', {
+  name: 'Kodi.home',
+  action() {
+    BlazeLayout.render('App_body', { main: 'Kodi_home' });
   },
 });
 

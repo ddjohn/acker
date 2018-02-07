@@ -1,5 +1,5 @@
 import './home.html';
 
-//import '../../components/hello/hello.js';
-//import '../../components/info/info.js';
+import '../../components/about/about.js';
 import '../../components/hue/hue.js';
+import '../../components/kodi/kodi.js';
