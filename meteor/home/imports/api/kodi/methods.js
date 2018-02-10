@@ -5,30 +5,51 @@ import { check } from 'meteor/check';
 import { Kodi } from './kodi.js';
 import { HTTP } from 'meteor/http';
 
+const JSONRPC = "http://192.168.1.86:8080/jsonrpc";
+
+function jsonrpc(request) {
+  console.log("api:methods(kodi." + request.method + ")");
+  const result = HTTP.call("POST", JSONRPC, {data:request});
+  console.log(result.data)
+  return result.data;
+};
+
 Meteor.methods({
 
   'kodi.pause'() {
-    console.log("api:methods(kodi.pause)");
-    const result = HTTP.call("POST", 
-      "http://192.168.1.86:8080/jsonrpc?Player.PlayPause", 
-      {data:{"jsonrpc":"2.0","method":"Player.PlayPause","id":1,"params":{"playerid":1}}});
-    console.log(result.data);
+    jsonrpc({"jsonrpc":"2.0","method":"Player.PlayPause","id":1,"params":{"playerid":1, "play":false}});
   },
 
   'kodi.play'() {
-    console.log("api:methods(kodi.play)");
-    const result = HTTP.call("POST", 
-      "http://192.168.1.86:8080/jsonrpc?Player.PlayPause", 
-      {data:{"jsonrpc":"2.0","method":"Player.PlayPause","id":1,"params":{"playerid":1}}});
-    console.log(result.data);
+    jsonrpc({"jsonrpc":"2.0","method":"Player.PlayPause","id":1,"params":{"playerid":1, "play":true}});
   },
 
   'kodi.stop'() {
-    console.log("api:methods(kodi.stop)");
-    const result = HTTP.call("POST", 
-      "http://192.168.1.86:8080/jsonrpc?Player.PlayPause", 
-      {data:{"jsonrpc":"2.0","method":"Player.PlayPause","id":1,"params":{"playerid":1}}});
-    console.log(result.data);
+    jsonrpc({"jsonrpc":"2.0","method":"Player.Stop","id":1,"params":{"playerid":1}});
+  },
+
+  'kodi.home'() {
+    jsonrpc({"jsonrpc":"2.0","method":"Input.Home","id":1});
+  },
+
+  'kodi.left'() {
+    jsonrpc({"jsonrpc":"2.0","method":"Input.Left","id":1});
+  },
+
+  'kodi.right'() {
+    jsonrpc({"jsonrpc":"2.0","method":"Input.Right","id":1});
+  },
+
+  'kodi.up'() {
+    jsonrpc({"jsonrpc":"2.0","method":"Input.Up","id":1});
+  },
+
+  'kodi.down'() {
+    jsonrpc({"jsonrpc":"2.0","method":"Input.Down","id":1});
+  },
+
+  'kodi.select'() {
+    jsonrpc({"jsonrpc":"2.0","method":"Input.Select","id":1});
   },
 
 });

@@ -1,12 +1,24 @@
 <template name="kodi">
 <h1>Kodi</h1>
 
-<button id="playButton" class="btn btn-success"><i class="fa fa-play"></i></button>
-<button id="pauseButton" class="btn btn-success"><i class="fa fa-pause"></i></button>
-<button id="stopButton" class="btn btn-success"><i class="fa fa-stop"></i></button>
-<button id="ffButton" class="btn btn-success"><i class="fa fa-fast-forward"></i></button>
-<button id="fbButton" class="btn btn-success"><i class="fa fa-fast-backward"></i></button>
-<button id="forwardButton" class="btn btn-success"><i class="fa fa-forward"></i></button>
-<button id="backwardButton" class="btn btn-success"><i class="fa fa-backward"></i></button>
-
+<table>
+  <tr>
+    <td><button id="fbButton" class="btn btn-success"><i class="fa fa-fast-backward"></i></button></td>
+    <td><button id="upButton" class="btn btn-default"><i class="fa fa-arrow-up"></i></button></td>
+    <td><button id="ffButton" class="btn btn-success"><i class="fa fa-fast-forward"></i></button></td>
+</tr><tr>
+    <td><button id="leftButton" class="btn btn-default"><i class="fa fa-arrow-left"></i></button></td>
+    <td><button id="selectButton" class="btn btn-default"><i class="fa fa-arrows-alt"></i></button></td>
+    <td><button id="rightButton" class="btn btn-default"><i class="fa fa-arrow-right"></i></button></td>
+</tr><tr>
+    <td><button id="backwardButton" class="btn btn-success"><i class="fa fa-backward"></i></button></td>
+    <td><button id="downButton" class="btn btn-default"><i class="fa fa-arrow-down"></i></button></td>
+    <td><button id="forwardButton" class="btn btn-success"><i class="fa fa-forward"></i></button></td>
+</tr><tr>
+    <td><button id="homeButton" class="btn btn-success"><i class="fa fa-home"></i></button></td>
+    <td><button id="playButton" class="btn btn-success"><i class="fa fa-play"></i></button></td>
+    <td><button id="pauseButton" class="btn btn-success"><i class="fa fa-pause"></i></button></td>
+    <td><button id="stopButton" class="btn btn-success"><i class="fa fa-stop"></i></button></td>  
+  </tr>
+</table>
 </template>

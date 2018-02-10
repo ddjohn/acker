@@ -25,6 +25,6 @@ meteortesting:mocha               # A package for writing and running your meteo
 johanbrook:publication-collector  # Test a Meteor publication by collecting its output
 accounts-ui
 accounts-password
-twbs:bootstrap
 fortawesome:fontawesome
 http
+alexwine:bootstrap-4
