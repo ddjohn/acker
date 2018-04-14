@@ -1,9 +1,14 @@
+console.log('server:main()');
+
 import { Meteor } from 'meteor/meteor';
+import { Items } from '../imports/ItemsApi.js';
 
 Meteor.startup(() => {
-  Items = new Mongo.Collection('items');
+	console.log('server:startup()');
 
-  var Api = new Restivus({useDefaultAuth: true, prettyJson: true});
-  Api.addCollection(Items);
-
+	//	      useAuth: true,
+	//const Items = new Mongo.Collection('items');
+	//var Api = new Restivus({useDefaultAuth: true, prettyJson: true});
+	const Api = new Restivus({prettyJson:true, authRequired:true, authToken:'97f0ad9e24ca5e0408a269748d7fe0a0'});
+	Api.addCollection(Items);
 });
