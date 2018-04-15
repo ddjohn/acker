@@ -2,6 +2,7 @@ console.log('server:main()');
 
 import { Meteor } from 'meteor/meteor';
 import { Items } from '../imports/ItemsApi.js';
+import { Series } from '../imports/SeriesApi.js';
 
 Meteor.startup(() => {
 	console.log('server:startup()');

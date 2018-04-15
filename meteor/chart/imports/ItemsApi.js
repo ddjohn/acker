@@ -9,7 +9,12 @@ if(Meteor.isServer) {
 
 	Meteor.publish('items', function itemsPublication() {
 		console.log("api::items()");
+		//console.log("api::items() -  name " + name);
 
-		return Items.find();
+		//if(name === undefined) {
+			return Items.find({});
+		//} else {
+		//	return Items.find({"name":name});
+		//}
 	});
 }

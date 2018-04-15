@@ -23,5 +23,5 @@ quit()
 #curl -X PATCH http://localhost:3000/api/items/NYMP4rkvhzWiRyJbi
 #curl --data kalle=polis -X PUT http://localhost:3000/api/items/NYMP4rkvhzWiRyJbi
 
-curl --data value=${RANDOM} -X POST http://localhost:3000/api/items/
+curl --data name=demo --data value=${RANDOM} -X POST http://localhost:3000/api/items/
 
