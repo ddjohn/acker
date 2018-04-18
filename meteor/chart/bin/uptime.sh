@@ -1,12 +1,12 @@
 #!/bin/bash
 
-avg() {
+fkn() {
 	uptime | awk '{gsub(/,/,"."); print $NF * 100};'
 }
 
 
 while :
 do
-	./insertdb.sh demo $(avg)
+	./insertdb.sh uptime $(fkn)
 	sleep 1
 done

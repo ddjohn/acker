@@ -15,15 +15,14 @@ Template.series.events({
 	'click': function(elem) {
 		console.log("click demon");
 		console.log(elem);
+		Session.set('serie', elem.currentTarget.outerText);
 	},
-	'click .Demon'() {
-		console.log("Set demon");
-		Session.set('serie', 'demon');
+	/*
+	'click .uptime'() {
+		console.log("Set uptime");
+		Session.set('serie', 'uptime');
 	},
-	'click .Demo'() {
-		console.log("Set demo");
-		Session.set('serie', 'demo');
-	},
+	*/
 });
 	
 

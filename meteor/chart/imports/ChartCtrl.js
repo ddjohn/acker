@@ -24,6 +24,7 @@ function buildChart() {
 		low: 0,
 		fullWidth: true,
 		chartPadding: {right: 40},
+		showArea: true,
 		showLine: true,
 		showPoint: false,
 		lineSmooth: Chartist.Interpolation.cardinal({
@@ -38,6 +39,9 @@ Template.chart.helpers({
 		//Session.set('labels', Items.find().fetch({name:Session.get('serie')}).map(x => x._id));
 		buildChart();
 		return Items.find({'name':Session.get('serie')});
+	},
+	serie() {
+		return Session.get('serie');
 	},
 });
 
